@@ -20,7 +20,25 @@ class CalcWindow(Widget):
         else:
             result = self.ids.calc_input.text = f'{prior}{number}'
             return result
+        
+    def add(self):
+        prior = self.ids.calc_input.text
 
+        self.ids.calc_input.text = f'{prior}+'
+    
+    def subtract(self):
+        prior = self.ids.calc_input.text
+        self.ids.calc_input.text = f'{prior}-'
+        
+
+    def multiply(self):
+        prior = self.ids.calc_input.text
+        self.ids.calc_input.text = f'{prior}x'
+
+    def divide(self):
+        prior = self.ids.calc_input.text
+        self.ids.calc_input.text = f'{prior}/'
+    
 class MainApp(App):
     def build(self):
         Builder.load_file("calc.kv")
