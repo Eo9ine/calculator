@@ -1,0 +1,213 @@
+#:kivy 2.3.0
+
+<CalcWindow>:
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+
+        canvas.before:
+            Color:
+                rgba: (1,1,1,1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        TextInput:
+            id: calc_input
+            size_hint: (1,.15)
+            text: '0'
+            font_size: 65
+            halign:"right"
+
+        GridLayout:
+            canvas.before:
+                Color:
+                    rgba:(200/255,200/255,200/255,1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+                
+            cols: 4
+            rows: 5
+            spacing: '2dp'
+
+            #Row
+            Button:
+                size_hint:(.2,.2)
+                text:'%'
+                color: (0,0,0,1)
+                background_normal: ''
+                background_color: (250/255, 250/255, 250/255, 1)
+                font_size: 35  
+
+            Button:
+                size_hint:(.2,.2)
+                text:'CE'
+                color: (0,0,0,1)
+                background_normal: ''
+                background_color: (250/255, 250/255, 250/255, 1)
+                font_size: 35  
+
+            Button:
+                id: clear
+                size_hint:(.2,.2)
+                text:'C'
+                background_normal: ''
+                color: (0,0,0,1)
+                background_color: (250/255,250/255,250/255,1)
+                font_size: 35 
+                on_press: root.clear() 
+
+            Button:
+                size_hint:(.2,.2)
+                text:'/'
+                color: (0,0,0,1)
+                background_normal: ''
+                background_color: (250/255,250/255,250/255,1)
+                font_size: 35  
+
+
+            #Row
+            Button:
+                size_hint:(.2,.2)
+                text:'7'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35
+                on_press: root.number(7)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'8'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35  
+                on_press: root.number(8)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'9'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35  
+                on_press: root.number(9)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'x'
+                background_normal: ''
+                color: (0,0,0,1)
+                background_color: (250/255,250/255,250/255,1)
+                font_size: 35  
+
+
+            #Row
+            Button:
+                size_hint:(.2,.2)
+                text:'4'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35  
+                on_press: root.number(4)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'5'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35  
+                on_press: root.number(5)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'6'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35  
+                on_press: root.number(6)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'-'
+                color: (0,0,0,1)
+                background_normal: ''
+                background_color: (250/255,250/255,250/255,1)
+                font_size: 35  
+
+            #Row
+            Button:
+                size_hint:(.2,.2)
+                text:'1'
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                background_normal: ''
+                font_size: 35  
+                on_press: root.number(1)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'2'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35  
+                on_press: root.number(2)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'3'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35  
+                on_press: root.number(3)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'+'
+                color: (0,0,0,1)
+                background_normal: ''
+                background_color: (250/255,250/255,250/255,1)
+                font_size: 35  
+            
+            #Row
+            Button:
+                size_hint:(.2,.2)
+                text:'+/-'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35   
+
+            Button:
+                size_hint:(.2,.2)
+                text:'0'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35  
+                on_press: root.number(0)
+
+            Button:
+                size_hint:(.2,.2)
+                text:'.'
+                background_normal: ''
+                color: (1,1,1,1)
+                background_color: (9/255,75/255,122/255,1)
+                font_size: 35  
+
+            Button:
+                size_hint:(.2,.2)
+                text:'='
+                color: (0,0,0,1)
+                background_normal: ''
+                background_color: (250/255,250/255,250/255,1)
+                font_size: 35                   
+            
