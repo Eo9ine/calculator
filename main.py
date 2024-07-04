@@ -38,6 +38,48 @@ class CalcWindow(Widget):
     def divide(self):
         prior = self.ids.calc_input.text
         self.ids.calc_input.text = f'{prior}/'
+
+    
+    def equals(self):
+        prior = self.ids.calc_input.text
+
+        operations = ['-', '+', '/', '*']
+
+        if "+" in prior:
+            num_list = prior.split("+")
+            answer = 0
+            for num in num_list:
+                answer = answer + int(num)
+
+            self.ids.calc_input.text = f'{str(answer)}'
+
+        elif "-" in prior:
+            num_list = prior.split("-")
+            answer = 0
+            for num in num_list:
+                answer = answer - int(num)
+
+            self.ids.calc_input.text = f"{str(answer)}"
+
+        elif "/" in prior:
+            num_list = prior.split("/")
+            answer = 0
+            for num in num_list:
+                answer = answer / int(num)
+            
+            self.ids.calc_input.text = f"{str(answer)}"
+
+        elif "*" in prior:
+            num_list = prior.split("*")
+            answer = 0
+            for num in num_list:
+                answer = answer * int(num)
+
+            self.ids.calc_input.text = f"{str(answer)}"
+
+        else:
+            self.ids.calc_input.text = prior
+
     
 class MainApp(App):
     def build(self):
